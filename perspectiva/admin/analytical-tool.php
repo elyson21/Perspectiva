@@ -89,11 +89,57 @@
                 <div class="form-group">
                     <label for="barangay">Barangay:</label>
                     <select id="barangay" name="barangay" required>
-                        <!-- Add options for barangays -->
                         <option value="Anilao">Anilao</option>
                         <option value="Atlag">Atlag</option>
                         <option value="Babatnin">Babatnin</option>
-                        <!-- Continue with other barangays -->
+                        <option value="Bagna">Bagna</option>
+                        <option value="Bagong Bayan">Bagong Bayan</option>
+                        <option value="Balayong">Balayong</option>
+                        <option value="Balite">Balite</option>
+                        <option value="Bangkal">Bangkal</option>
+                        <option value="Barihan">Barihan</option>
+                        <option value="Bulihan">Bulihan</option>
+                        <option value="Bungahan">Bungahan</option>
+                        <option value="Caingin">Caingin</option>
+                        <option value="Calero">Calero</option>
+                        <option value="Caliligawan">Caliligawan</option>
+                        <option value="Canalate">Canalate</option>
+                        <option value="Caniogan">Caniogan</option>
+                        <option value="Catmon">Catmon</option>
+                        <option value="Cofradia">Cofradia</option>
+                        <option value="Dakila">Dakila</option>
+                        <option value="Guinhawa">Guinhawa</option>
+                        <option value="Liang">Liang</option>
+                        <option value="Ligas">Ligas</option>
+                        <option value="Longos">Longos</option>
+                        <option value="Look_1st">Look 1st</option>
+                        <option value="Look_2nd">Look 2nd</option>
+                        <option value="Lugam">Lugam</option>
+                        <option value="Mabolo">Mabolo</option>
+                        <option value="Mambog">Mambog</option>
+                        <option value="Masile">Masile</option>
+                        <option value="Matimbo">Matimbo</option>
+                        <option value="Mojon">Mojon</option>
+                        <option value="Namayan">Namayan</option>
+                        <option value="Niugan">Niugan</option>
+                        <option value="Pamarawan">Pamarawan</option>
+                        <option value="Panasahan">Panasahan</option>
+                        <option value="Pinagbakahan">Pinagbakahan</option>
+                        <option value="San_Agustin">San Agustin</option>
+                        <option value="San_Gabriel">San Gabriel</option>
+                        <option value="San_Juan">San Juan</option>
+                        <option value="San_Pablo">San Pablo</option>
+                        <option value="San_Vicente">San Vicente</option>
+                        <option value="Santiago">Santiago</option>
+                        <option value="Santisima_Trinidad">Santisima Trinidad</option>
+                        <option value="Santo_Cristo">Santo Cristo</option>
+                        <option value="Santo_Niño">Santo Niño</option>
+                        <option value="Santo_Rosario">Santo Rosario</option>
+                        <option value="Santor">Santor</option>
+                        <option value="Sumapang_Bata">Sumapang Bata</option>
+                        <option value="Sumapang_Matanda">Sumapang Matanda</option>
+                        <option value="Taal">Taal</option>
+                        <option value="Tikay">Tikay</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -155,9 +201,48 @@
                 'Bangkal' => 8,
                 'Barihan' => 9,
                 'Bulihan' => 10,
-                // Continue mapping all barangays
+                'Bungahan' => 11,
+                'Caingin' => 12,
+                'Calero' => 13,
+                'Caliligawan' => 14,
+                'Canalate' => 15,
+                'Caniogan' => 16,
+                'Catmon' => 17,
+                'Cofradia' => 18,
+                'Dakila' => 19,
+                'Guinhawa' => 20,
+                'Liang' => 21,
+                'Ligas' => 22,
+                'Longos' => 23,
+                'Look_1st' => 24,
+                'Look_2nd' => 25,
+                'Lugam' => 26,
+                'Mabolo' => 27,
+                'Mambog' => 28,
+                'Masile' => 29,
+                'Matimbo' => 30,
+                'Mojon' => 31,
+                'Namayan' => 32,
+                'Niugan' => 33,
+                'Pamarawan' => 34,
+                'Panasahan' => 35,
+                'Pinagbakahan' => 36,
+                'San_Agustin' => 37,
+                'San_Gabriel' => 38,
+                'San_Juan' => 39,
+                'San_Pablo' => 40,
+                'San_Vicente' => 41,
+                'Santiago' => 42,
+                'Santisima_Trinidad' => 43,
+                'Santo_Cristo' => 44,
+                'Santo_Niño' => 45,
+                'Santo_Rosario' => 46,
+                'Santor' => 47,
+                'Sumapang_Bata' => 48,
+                'Sumapang_Matanda' => 49,
+                'Taal' => 50,
+                'Tikay' => 51,
             ];
-
             $genderMap = ['Male' => 0, 'Female' => 1];
             $maritalStatusMap = ['Single' => 0, 'Married' => 1];
             $educationMap = ['College_Graduate' => 3, 'College_Level' => 2, 'High_School' => 1, 'Elementary' => 0];
@@ -174,57 +259,56 @@
             ];
         }
 
-        require '../vendor/autoload.php'; // Ensure PHP-ML is autoloaded
-        
+        require '../vendor/autoload.php';
+
         use Phpml\Classification\KNearestNeighbors;
-        use Phpml\Classification\SVC;
-        use Phpml\SupportVectorMachine\Kernel;
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $barangay = $_POST['barangay'];
-            $age = $_POST['age'];
-            $gender = $_POST['gender'];
-            $maritalStatus = $_POST['marital_status'];
-            $educationalAttainment = $_POST['educational_attainment'];
-            $employmentStatus = $_POST['employment_status'];
-            $politicalInterest = $_POST['political_interest'];
+            $barangay = filter_input(INPUT_POST, 'barangay', FILTER_SANITIZE_STRING);
+            $age = intval(filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT));
+            $gender = filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
+            $maritalStatus = filter_input(INPUT_POST, 'marital_status', FILTER_SANITIZE_STRING);
+            $educationalAttainment = filter_input(INPUT_POST, 'educational_attainment', FILTER_SANITIZE_STRING);
+            $employmentStatus = filter_input(INPUT_POST, 'employment_status', FILTER_SANITIZE_STRING);
+            $politicalInterest = filter_input(INPUT_POST, 'political_interest', FILTER_SANITIZE_STRING);
 
-            $samples = [
-                [30] + encodeData('Anilao', 'Male', 'Single', 'College_Graduate', 'Employed', 'Yes'),
-                [25] + encodeData('Atlag', 'Female', 'Married', 'College_Level', 'Unemployed', 'No'),
-                // Add more samples
-            ];
+            $input = array_merge([$age], encodeData($barangay, $gender, $maritalStatus, $educationalAttainment, $employmentStatus, $politicalInterest));
 
-            $labels = ['Yes', 'No']; // Example labels for participation prediction
-        
-            $input = [intval($age)] + encodeData($barangay, $gender, $maritalStatus, $educationalAttainment, $employmentStatus, $politicalInterest);
+            $dynamicSamples = [];
+            $reasons = [];
 
-            // k-Nearest Neighbors classifier
+            if ($age < 18) {
+                $isParticipating = 'No';
+                $reasons[] = 'Underage';
+            } elseif ($politicalInterest === 'No') {
+                $isParticipating = 'No';
+                $reasons[] = 'Lack of political interest';
+            } elseif ($employmentStatus === 'Unemployed') {
+                $isParticipating = 'No';
+                $reasons[] = 'Financially Struggling';
+            } elseif ($maritalStatus === 'Married') {
+                $isParticipating = 'No';
+                $reasons[] = 'Have no time';
+            } elseif ($educationalAttainment === 'College_Level') {
+                $isParticipating = 'No';
+                $reasons[] = 'Have no time';
+            } else {
+                $isParticipating = 'Yes';
+            }
+
+            $dynamicSamples[] = $input;
+            $labels = [$isParticipating];
             $classifier = new KNearestNeighbors();
-            $classifier->train($samples, $labels);
-            $isParticipating = $classifier->predict($input);
+            $classifier->train($dynamicSamples, $labels);
+            $isParticipating = $classifier->predict($input)[0];
+            $isParticipatingDisplay = $isParticipating === 'Y' ? 'Yes' : 'No';
+            echo "<div class='coming-soon'>Prediction: This voter will most likely participate: <strong>$isParticipatingDisplay</strong></div>";
 
-            echo "<div class='coming-soon'>Prediction: This voter will most likely participate: <strong>$isParticipating</strong></div>";
-
-            // If not participating, predict reasons
-            if ($isParticipating === "No") {
-                $samples2 = [
-                    [30] + encodeData('Anilao', 'Male', 'Single', 'College_Graduate', 'Employed', 'No'),
-                    [25] + encodeData('Atlag', 'Female', 'Married', 'College_Level', 'Unemployed', 'No'),
-                    // Add more non-participation samples
-                ];
-
-                $labels2 = ['Unaware', 'Uninterested']; // Example reasons for non-participation
-        
-                $classifier2 = new SVC(Kernel::LINEAR);
-                $classifier2->train($samples2, $labels2);
-                $factors = $classifier2->predict($input);
-
-                echo "<div class='coming-soon'>Factors contributing to non-participation: <strong>$factors</strong></div>";
+            if ($isParticipatingDisplay === "No") {
+                echo "<div class='coming-soon'>Factors contributing to non-participation: <strong>" . implode(', ', $reasons) . "</strong></div>";
             }
         }
         ?>
-
     </div>
 </body>
 
