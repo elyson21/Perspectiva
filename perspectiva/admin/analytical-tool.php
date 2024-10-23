@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analytical Tool</title>
-    <link rel="stylesheet" href="../styles.css"> 
+    <link rel="stylesheet" href="../styles.css">
     <style>
         .sidebar {
             width: 200px;
-            background-color: #800000; 
+            background-color: #800000;
             color: white;
-            height: 100vh; 
+            height: 100vh;
             padding: 15px;
-            position: fixed; 
+            position: fixed;
         }
+
         .sidebar a {
             display: block;
             color: white;
@@ -21,31 +23,36 @@
             padding: 10px;
             margin: 10px 0;
         }
+
         .sidebar a:hover {
-            background-color: #600000; 
+            background-color: #600000;
         }
+
         .content {
-            margin-left: 220px; 
+            margin-left: 220px;
             padding: 20px;
             display: flex;
-            justify-content: center; 
-            align-items: center; 
-            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
+
         .header {
             font-size: 24px;
-            color: #800000; 
-            margin-bottom: 20px; 
+            color: #800000;
+            margin-bottom: 20px;
         }
+
         .coming-soon {
             background-color: #f9f9f9;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
-            width: 100%; 
-            text-align: center; 
+            width: 100%;
+            text-align: center;
         }
+
         .form-container {
             background-color: #f9f9f9;
             padding: 20px;
@@ -53,13 +60,15 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             width: 100%;
-            margin-top: 20px; 
+            margin-top: 20px;
         }
+
         .form-group {
-            margin-bottom: 15px; 
+            margin-bottom: 15px;
         }
     </style>
 </head>
+
 <body>
     <div class="sidebar">
         <h2>Admin Dashboard</h2>
@@ -72,66 +81,19 @@
         <a href="account-settings.php">Account Settings</a>
         <a href="logout.php">Logout</a>
     </div>
-    
+
     <div class="content">
         <h1 class="header">Analytical Tool</h1>
-        
         <div class="form-container">
             <form method="post">
                 <div class="form-group">
                     <label for="barangay">Barangay:</label>
                     <select id="barangay" name="barangay" required>
+                        <!-- Add options for barangays -->
                         <option value="Anilao">Anilao</option>
                         <option value="Atlag">Atlag</option>
                         <option value="Babatnin">Babatnin</option>
-                        <option value="Bagna">Bagna</option>
-                        <option value="Bagong Bayan">Bagong Bayan</option>
-                        <option value="Balayong">Balayong</option>
-                        <option value="Balite">Balite</option>
-                        <option value="Bangkal">Bangkal</option>
-                        <option value="Barihan">Barihan</option>
-                        <option value="Bulihan">Bulihan</option>
-                        <option value="Bungahan">Bungahan</option>
-                        <option value="Caingin">Caingin</option>
-                        <option value="Calero">Calero</option>
-                        <option value="Caliligawan">Caliligawan</option>
-                        <option value="Canalate">Canalate</option>
-                        <option value="Caniogan">Caniogan</option>
-                        <option value="Catmon">Catmon</option>
-                        <option value="Cofradia">Cofradia</option>
-                        <option value="Dakila">Dakila</option>
-                        <option value="Guinhawa">Guinhawa</option>
-                        <option value="Liang">Liang</option>
-                        <option value="Ligas">Ligas</option>
-                        <option value="Longos">Longos</option>
-                        <option value="Look 1st">Look 1st</option>
-                        <option value="Look 2nd">Look 2nd</option>
-                        <option value="Lugam">Lugam</option>
-                        <option value="Mabolo">Mabolo</option>
-                        <option value="Mambog">Mambog</option>
-                        <option value="Masile">Masile</option>
-                        <option value="Matimbo">Matimbo</option>
-                        <option value="Mojon">Mojon</option>
-                        <option value="Namayan">Namayan</option>
-                        <option value="Niugan">Niugan</option>
-                        <option value="Pamarawan">Pamarawan</option>
-                        <option value="Panasahan">Panasahan</option>
-                        <option value="Pinagbakahan">Pinagbakahan</option>
-                        <option value="San Agustin">San Agustin</option>
-                        <option value="San Gabriel">San Gabriel</option>
-                        <option value="San Juan">San Juan</option>
-                        <option value="San Pablo">San Pablo</option>
-                        <option value="San Vicente">San Vicente</option>
-                        <option value="Santiago">Santiago</option>
-                        <option value="Santisima Trinidad">Santisima Trinidad</option>
-                        <option value="Santo Cristo">Santo Cristo</option>
-                        <option value="Santo Niño">Santo Niño</option>
-                        <option value="Santo Rosario">Santo Rosario</option>
-                        <option value="Santor">Santor</option>
-                        <option value="Sumapang Bata">Sumapang Bata</option>
-                        <option value="Sumapang Matanda">Sumapang Matanda</option>
-                        <option value="Taal">Taal</option>
-                        <option value="Tikay">Tikay</option>
+                        <!-- Continue with other barangays -->
                     </select>
                 </div>
                 <div class="form-group">
@@ -155,9 +117,9 @@
                 <div class="form-group">
                     <label for="educational_attainment">Educational Attainment:</label>
                     <select id="educational_attainment" name="educational_attainment" required>
-                        <option value="College Graduate">College Graduate</option>
-                        <option value="College Level">College Level</option>
-                        <option value="High School">High School</option>
+                        <option value="College_Graduate">College Graduate</option>
+                        <option value="College_Level">College Level</option>
+                        <option value="High_School">High School</option>
                         <option value="Elementary">Elementary</option>
                     </select>
                 </div>
@@ -180,12 +142,45 @@
         </div>
 
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $modelFile1 = '../models/model1.model'; 
-            $modelFile2 = '../models/model2.model'; 
-            $dataFileForModel1 = '../models/user_input_participation_model1.arff'; 
-            $dataFileForModel2 = '../models/user_input_factors_model2.arff'; 
+        function encodeData($barangay, $gender, $maritalStatus, $educationalAttainment, $employmentStatus, $politicalInterest)
+        {
+            $barangayMap = [
+                'Anilao' => 1,
+                'Atlag' => 2,
+                'Babatnin' => 3,
+                'Bagna' => 4,
+                'Bagong Bayan' => 5,
+                'Balayong' => 6,
+                'Balite' => 7,
+                'Bangkal' => 8,
+                'Barihan' => 9,
+                'Bulihan' => 10,
+                // Continue mapping all barangays
+            ];
 
+            $genderMap = ['Male' => 0, 'Female' => 1];
+            $maritalStatusMap = ['Single' => 0, 'Married' => 1];
+            $educationMap = ['College_Graduate' => 3, 'College_Level' => 2, 'High_School' => 1, 'Elementary' => 0];
+            $employmentMap = ['Employed' => 1, 'Unemployed' => 0];
+            $politicalInterestMap = ['Yes' => 1, 'No' => 0];
+
+            return [
+                $barangayMap[$barangay],
+                $genderMap[$gender],
+                $maritalStatusMap[$maritalStatus],
+                $educationMap[$educationalAttainment],
+                $employmentMap[$employmentStatus],
+                $politicalInterestMap[$politicalInterest]
+            ];
+        }
+
+        require '../vendor/autoload.php'; // Ensure PHP-ML is autoloaded
+        
+        use Phpml\Classification\KNearestNeighbors;
+        use Phpml\Classification\SVC;
+        use Phpml\SupportVectorMachine\Kernel;
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $barangay = $_POST['barangay'];
             $age = $_POST['age'];
             $gender = $_POST['gender'];
@@ -194,55 +189,43 @@
             $employmentStatus = $_POST['employment_status'];
             $politicalInterest = $_POST['political_interest'];
 
-            // Prepare ARFF for Model 1
-            $arffDataForModel1 = "@relation voter_participation\n\n" .
-                                 "@attribute Barangay string\n" .
-                                 "@attribute Age numeric\n" .
-                                 "@attribute Gender {Male,Female}\n" .
-                                 "@attribute Marital_Status {Single,Married}\n" .
-                                 "@attribute Educational_Attainment {College_Graduate,College_Level,High_School,Elementary}\n" .
-                                 "@attribute Employment_Status {Employed,Unemployed}\n" .
-                                 "@attribute Political_Interest {Yes,No}\n" .
-                                 "@attribute Factors {Settings_Not_Suitable,Unaware,Uninterested,No_Money}\n\n" .
-                                 "@data\n" .
-                                 "'$barangay', $age, '$gender', '$maritalStatus', '$educationalAttainment', '$employmentStatus', '$politicalInterest', ?\n";
+            $samples = [
+                [30] + encodeData('Anilao', 'Male', 'Single', 'College_Graduate', 'Employed', 'Yes'),
+                [25] + encodeData('Atlag', 'Female', 'Married', 'College_Level', 'Unemployed', 'No'),
+                // Add more samples
+            ];
 
-            file_put_contents($dataFileForModel1, $arffDataForModel1);
+            $labels = ['Yes', 'No']; // Example labels for participation prediction
+        
+            $input = [intval($age)] + encodeData($barangay, $gender, $maritalStatus, $educationalAttainment, $employmentStatus, $politicalInterest);
 
-            // Predict with Model 1
-            $command1 = "java -Xmx1024m -cp ../weka/weka.jar weka.classifiers.Classifier -l $modelFile1 -T $dataFileForModel1 -p 0";
-            $output1 = shell_exec($command1);
-            $isParticipating = strpos($output1, 'Yes') !== false ? "Yes" : "No";
+            // k-Nearest Neighbors classifier
+            $classifier = new KNearestNeighbors();
+            $classifier->train($samples, $labels);
+            $isParticipating = $classifier->predict($input);
+
             echo "<div class='coming-soon'>Prediction: This voter will most likely participate: <strong>$isParticipating</strong></div>";
 
-            // If not participating, prepare data for Model 2
+            // If not participating, predict reasons
             if ($isParticipating === "No") {
-                // Prepare ARFF for Model 2
-                $arffDataForModel2 = "@relation voter_non_participation\n\n" .
-                                     "@attribute Barangay string\n" .
-                                     "@attribute Age numeric\n" .
-                                     "@attribute Gender {Male,Female}\n" .
-                                     "@attribute Marital_Status {Single,Married}\n" .
-                                     "@attribute Educational_Attainment {College_Graduate,College_Level,High_School,Elementary}\n" .
-                                     "@attribute Employment_Status {Employed,Unemployed}\n" .
-                                     "@attribute Political_Interest {Yes,No}\n" .
-                                     "@attribute Factors {Settings_Not_Suitable,Unaware,Uninterested,No_Money}\n\n" .
-                                     "@data\n" .
-                                     "'$barangay', $age, '$gender', '$maritalStatus', '$educationalAttainment', '$employmentStatus', 'No', ?\n";
+                $samples2 = [
+                    [30] + encodeData('Anilao', 'Male', 'Single', 'College_Graduate', 'Employed', 'No'),
+                    [25] + encodeData('Atlag', 'Female', 'Married', 'College_Level', 'Unemployed', 'No'),
+                    // Add more non-participation samples
+                ];
 
-                file_put_contents($dataFileForModel2, $arffDataForModel2);
+                $labels2 = ['Unaware', 'Uninterested']; // Example reasons for non-participation
+        
+                $classifier2 = new SVC(Kernel::LINEAR);
+                $classifier2->train($samples2, $labels2);
+                $factors = $classifier2->predict($input);
 
-                // Predict with Model 2
-                $command2 = "java -Xmx1024m -cp ../weka/weka.jar weka.classifiers.Classifier -l $modelFile2 -T $dataFileForModel2 -p 0";
-                $output2 = shell_exec($command2);
-                if ($output2) {
-                    echo "<div class='coming-soon'>Factors contributing to non-participation:<br>$output2</div>";
-                } else {
-                    echo "<div class='coming-soon'>No factors found for non-participation.</div>";
-                }
+                echo "<div class='coming-soon'>Factors contributing to non-participation: <strong>$factors</strong></div>";
             }
         }
         ?>
+
     </div>
 </body>
+
 </html>
