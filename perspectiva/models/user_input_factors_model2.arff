@@ -1,4 +1,4 @@
-@relation voter_participation
+@relation voter_non_participation
 
 @attribute Barangay string
 @attribute Age numeric
@@ -10,4 +10,4 @@
 @attribute Factors {Settings_Not_Suitable,Unaware,Uninterested,No_Money}
 
 @data
-'Bagong Bayan', 22, 'Male', 'Single', 'College Level', 'Unemployed', 'Yes', ?
+'Santo Niño', 24, 'Female', 'Single', 'College Graduate', 'Employed', 'No', ?
